@@ -28,9 +28,9 @@ useEffect(()=>{
 })
   return (
     <>
-    <div className='fixed top-0 right-0 z-10 translate-y-[-80%]'>
+    {/* <div className='fixed top-0 right-0 z-10 translate-y-[-80%]'>
       <Image src={assets.header_bg_color} alt='' className='w-full' />
-    </div>
+    </div> */}
         <nav className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 ${isScroll? "bg-white bg-opacity-50 backdrop-blur-lg shadow-sm": ""}`}>
             <a href='#top' >
                 <Image src = {assets.logotwt} alt='' className='w-12 h-12 cursor-pointer mr-14 rounded-full'/>

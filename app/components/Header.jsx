@@ -7,9 +7,9 @@ import { Autoplay } from 'swiper/modules';
 
 const Header = () => {
   const backgroundImages = [
-    '/public/slider1.jpg',
-    '/public/slider2.jpg',
-    '/public/slider3.jpg',
+    '/slider1.jpg',
+    '/slider2.jpg',
+    '/slider3.jpg',
   ];
 
   return (
