@@ -7,6 +7,7 @@ import Plans from "./components/Plans";
 import Footer from "./components/Footer";
 
 
+
 export default function Home() {
 
     return (
@@ -17,6 +18,7 @@ export default function Home() {
     <Header />
     <About />
     <Plans />
+    
     <Footer />
     </>
   );
