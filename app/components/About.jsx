@@ -19,7 +19,7 @@ const About = () => {
 
 He is the founder of The Winning Team Fx, Ghana's leading online forex and crypto trading academy, where he trains over one million beginners and advanced traders on how to trade profitably.</p>
       <div className="flex justify-center">
-        <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
+        <button className="inline-flex text-white bg-black  border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded text-lg">Button</button>
         
       </div>
     </div>
@@ -35,8 +35,8 @@ He is the founder of The Winning Team Fx, Ghana's leading online forex and crypt
 
 He is the founder and pioneer of the The Winning Team academy, launched in 2023, out of the need to create a haven for forex traders to learn from and connect with the industry's biggest thought leader in Africa.</p>
       <div className="flex justify-center">
-        <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
-        <button className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>
+        <button className="inline-flex text-white bg-black border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded text-lg">Button</button>
+        
       </div>
     </div>
     <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
