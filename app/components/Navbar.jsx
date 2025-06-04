@@ -35,7 +35,7 @@ useEffect(()=>{
             <a href='#top' >
                 <Image src = {assets.logotwt} alt='' className='w-12 h-12 cursor-pointer mr-14 rounded-full'/>
             </a>
-            <ul className={`hidden md:flex item-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${isScroll ? "": " bg-white shadow-sm bg-opacity-50"}`}>
+            <ul className={`hidden md:flex item-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${isScroll ? "": " bg-black shadow-sm bg-opacity-50"}`}>
                 <li><a className='font-Ovo' href='#top'>Home</a></li>
                 <li><a className='font-Ovo' href='#about'>About me</a></li>
                 <li><a className='font-Ovo' href='#plans'>Plans</a></li>

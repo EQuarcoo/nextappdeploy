@@ -43,7 +43,11 @@ He is the founder and pioneer of the The Winning Team academy, launched in 2023,
       <Image className="object-cover object-center rounded" alt="hero" src={assets.house}/>
     </div>
   </div>
+
+  
 </section>
+
+
     </div>
   )
 }
