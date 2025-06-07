@@ -92,7 +92,7 @@ const Hero = () => {
     </div>
   <div className="relative bg-cover bg-center bg-no-repeat mt-20" style={{ backgroundImage: "url('/slider2.jpg')" }}>
   {/* Black overlay */}
-  <div className="absolute inset-0 bg-black opacity-90"></div>
+  <div className="absolute inset-0 bg-black opacity-80"></div>
 
   {/* Content */}
   <div className="relative z-10 flex flex-col items-center text-center text-white px-4 py-20">

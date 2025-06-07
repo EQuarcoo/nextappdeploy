@@ -15,9 +15,8 @@ const About = () => {
       <h1 className="title-font sm:text-4xl text-5xl mb-4 font-medium text-gray-900">Meet your
        Mentor
       </h1>
-      <p className="mb-8 leading-relaxed">FOREX JESUS is a professional, profitable and notable forex trader with over 8 years of experience, a thought leader, an investor and an international keynote speaker. He is also a kingmaker, passionate about helping humans through their “grass to grace” journeys.
-
-He is the founder of The Winning Team Fx, Ghana's leading online forex and crypto trading academy, where he trains over one million beginners and advanced traders on how to trade profitably.</p>
+      <p className="mb-8 leading-relaxed">FOREXJESUS is a professional forex trader with years of trading experience.
+He is a dedicated mentor, passionate about guiding individuals on their transformative learning experience. He is the founder of The Winning Team Forex Academy which leads a community of over one thousand traders, both beginners and advanced traders, whom he trains to trade successfully and profitably.</p>
       <div className="flex justify-center">
         <button className="inline-flex text-white bg-black  border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded text-lg">Button</button>
         
