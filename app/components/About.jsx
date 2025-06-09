@@ -24,7 +24,7 @@ He is a dedicated mentor, passionate about guiding individuals on their transfor
  </p>
       <div className="flex justify-center">
   <a
-    href="https://t.me/Karkaah1" 
+    href="https://t.me/forexjesus01" 
     target="_blank"
     rel="noopener noreferrer"
   >

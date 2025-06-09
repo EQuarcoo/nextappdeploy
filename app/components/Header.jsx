@@ -46,7 +46,7 @@ const Header = () => {
         
         
         <h1 className="text-3xl sm:text-6xl lg:text-[66px] font-Ovo">
-          Make money from the 7 Trillion Plus dollar market
+          Make money from the 6 Trillion Plus dollar market
         </h1>
         <p className="max-w-2xl mx-auto font-Ovo">
           Discover the secret strategies of everyday people who are transforming modest investments into substantial fortunes from the biggest financial market of over 6 trillion dollars.
