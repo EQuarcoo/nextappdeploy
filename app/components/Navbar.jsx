@@ -71,7 +71,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link href="/#lotcal" className="font-Ovo">
+            <Link href="/lotsize" className="font-Ovo">
               Lotsize Calculator
             </Link>
           </li>
@@ -137,7 +137,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link href="/#lotcal" className="font-Ovo" onClick={closeMenu}>
+              <Link href="/lotsize" className="font-Ovo" onClick={closeMenu}>
                 Lotsize Calculator
               </Link>
             </li>

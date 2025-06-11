@@ -3,47 +3,107 @@ import Link from "next/link"
 import SignalHeader from '../components/SignalHeader'
 
 const Page = () => {
+  const features = [
+    {
+      title: "Daily Trade Alerts",
+      desc: "Receive our high probability trade set-up and make money on daily basis.",
+      bg: "bg-indigo-500 hover:bg-indigo-600 text-white",
+      icon: "📢",
+    },
+    {
+      title: "Market Analysis",
+      desc: "Breakdown of our most traded pairs by identifying key levels using our approved technical approach.",
+      bg: "bg-green-500 hover:bg-green-600 text-white",
+      icon: "📈",
+    },
+    {
+      title: "Risk Management Tips",
+      desc: "Each signal includes suggested stop loss, take profit & risk ratio.",
+      bg: "bg-pink-500 hover:bg-pink-600 text-white",
+      icon: "🛡️",
+    },
+  ]
+
+  const plans = [
+    {
+      name: "Silver",
+      duration: "1 Month",
+      price: "GHC 400",
+      bg: "bg-gray-200 hover:bg-gray-300 text-black",
+      link: "https://paystack.com/pay/silverplan",
+      icon: "🥈",
+    },
+    {
+      name: "Gold",
+      duration: "3 Months",
+      price: "GHC 700",
+      bg: "bg-yellow-400 hover:bg-yellow-500 text-black",
+      link: "https://paystack.com/pay/goldplan",
+      icon: "🥇",
+    },
+    {
+      name: "Diamond",
+      duration: "6 Months",
+      price: "GHC 1000",
+      bg: "bg-blue-500 hover:bg-blue-600 text-white",
+      link: "https://paystack.com/pay/diamondplan",
+      icon: "💎",
+    },
+  ]
+
   return (
     <main className="bg-white text-black min-h-screen px-6 md:px-12 xl:px-[8%] pt-16 pb-20 font-Ovo">
-      {/* Add bottom margin here */}
+      {/* Header */}
       <div className="mb-16">
         <SignalHeader />
       </div>
 
       {/* Signal Features */}
-      <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-        {[
-          {
-            title: "Daily Trade Alerts",
-            desc: "Receive high-probability setups straight to your inbox or WhatsApp.",
-          },
-          {
-            title: "Market Analysis",
-            desc: "Breakdowns of trending pairs, key levels, and technical outlooks.",
-          },
-          {
-            title: "Risk Management Tips",
-            desc: "Each signal includes suggested stop loss, take profit & risk ratio.",
-          },
-        ].map((feature, i) => (
-          <div key={i} className="p-6 bg-gray-100 rounded-2xl shadow-md">
-            <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-            <p className="text-gray-700">{feature.desc}</p>
+      <section className="flex flex-wrap justify-center gap-3 md:gap-4 mb-16">
+        {features.map((feature, i) => (
+          <div
+            key={i}
+            className={`p-6 w-[230px] rounded-2xl shadow-lg transform transition-all duration-500 hover:scale-105 animate-fade-in ${feature.bg}`}
+          >
+            <h3 className="text-lg font-bold mb-2 flex items-center gap-2">
+              <span>{feature.icon}</span> {feature.title}
+            </h3>
+            <p className="text-sm">{feature.desc}</p>
           </div>
         ))}
       </section>
 
       {/* Subscription CTA */}
       <section className="text-center">
-        <h2 className="text-2xl font-bold mb-4">Ready to Get Started?</h2>
+        <h2 className="text-2xl font-bold mb-6">Ready to Get Started?</h2>
+
+        {/* Pricing Cards with Paystack Links */}
+        <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-8">
+          {plans.map((plan, i) => (
+            <a
+              href={plan.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={i}
+              className={`w-[200px] p-5 rounded-xl shadow-md transform transition-all duration-300 hover:scale-105 cursor-pointer ${plan.bg}`}
+            >
+              <h3 className="text-lg font-bold mb-1 flex items-center gap-2">
+                <span>{plan.icon}</span> {plan.name}
+              </h3>
+              <p className="text-sm mb-1">{plan.duration}</p>
+              <p className="text-sm font-semibold">{plan.price}</p>
+            </a>
+          ))}
+        </div>
+
         <p className="mb-6 text-gray-600">
           Subscribe to a package that suits your experience level — from beginner to advanced traders.
         </p>
-        <Link
-          href="/#plans"
-          className="inline-block bg-black text-white py-3 px-6 rounded-full hover:bg-gray-800 transition duration-300"
-        >
-          View Signal Plans
+
+        <Link href="/#plans">
+          <span className="inline-block bg-black text-white py-3 px-6 rounded-full hover:bg-gray-800 transition duration-300 cursor-pointer">
+            View Signal Plans
+          </span>
         </Link>
       </section>
     </main>

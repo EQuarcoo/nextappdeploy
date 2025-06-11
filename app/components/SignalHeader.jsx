@@ -7,7 +7,7 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
 const SignalHeader = () => {
-  const images = ["/fj1.webp", "/fj2.jpg", "/fj3.jpg"];
+  const images = ["/fj1.jpg", "/fj2.jpg", "/fj3.jpg"];
 
   return (
     <header
@@ -45,13 +45,12 @@ const SignalHeader = () => {
 
         {/* Text Section */}
         <div className="text-center md:text-left">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-Ovo mb-6 leading-tight">
-            Get Reliable Forex Signals Daily
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-Ovo mb-6 leading-none">
+            Join our VIP signal room and make money on daily basis.
           </h1>
           <p className="text-gray-300 mb-6">
-            Unlock consistent profits with our trusted forex trading signals.
-            We help you make smarter trades with timely alerts and expert
-            guidance tailored to your level.
+            Our VIP signal offers personalized trading strategies, live market updates and expert analysis to boost your trading profits.  
+Don't miss out!! Join now and start making profits .
           </p>
           <a
             href="/#plans"

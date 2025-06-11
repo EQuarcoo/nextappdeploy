@@ -55,7 +55,7 @@ const Footer = () => {
                 className="invert"
               />
             </Link>
-            <Link href="https://wa.me/23354543006" target="_blank">
+            <Link href="https://wa.me/233545430066" target="_blank">
               <Image
                 src="/icons/whatsapp.svg"
                 alt="WhatsApp"
