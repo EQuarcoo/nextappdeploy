@@ -52,12 +52,7 @@ const SignalHeader = () => {
             Our VIP signal offers personalized trading strategies, live market updates and expert analysis to boost your trading profits.  
 Don't miss out!! Join now and start making profits .
           </p>
-          <a
-            href="/#plans"
-            className="inline-block bg-white text-black py-3 px-8 rounded-full font-semibold transition-transform transform hover:scale-105"
-          >
-            View Signal Plans
-          </a>
+         
         </div>
       </div>
     </header>

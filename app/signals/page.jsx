@@ -3,7 +3,6 @@ import React from 'react'
 import Link from 'next/link'
 import SignalHeader from '../components/SignalHeader'
 
-
 const Page = () => {
   const features = [
     {
@@ -30,7 +29,7 @@ const Page = () => {
     {
       name: 'Silver',
       duration: '1 Month',
-      price: 'GHC 400',
+      price: 'USD 20',
       bg: 'bg-gray-200 hover:bg-gray-300 text-black',
       link: 'https://paystack.com/pay/silverplan',
       icon: '🥈',
@@ -38,7 +37,7 @@ const Page = () => {
     {
       name: 'Gold',
       duration: '3 Months',
-      price: 'GHC 700',
+      price: 'USD 50',
       bg: 'bg-yellow-400 hover:bg-yellow-500 text-black',
       link: 'https://paystack.com/pay/goldplan',
       icon: '🥇',
@@ -46,7 +45,7 @@ const Page = () => {
     {
       name: 'Diamond',
       duration: '6 Months',
-      price: 'GHC 1000',
+      price: 'USD 90',
       bg: 'bg-blue-500 hover:bg-blue-600 text-white',
       link: 'https://paystack.com/pay/diamondplan',
       icon: '💎',
@@ -55,9 +54,8 @@ const Page = () => {
 
   return (
     <div
-
       className="relative min-h-screen bg-fixed bg-cover bg-center"
-      style={{ backgroundImage: "url('/signalbg.jpg')" }}
+      style={{ backgroundImage: "url('/slider1.jpg')" }}
     >
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/60 z-0"></div>
@@ -66,8 +64,15 @@ const Page = () => {
       <main className="relative z-10 text-white min-h-screen px-6 md:px-12 xl:px-[8%] pt-16 pb-20 font-Ovo">
         {/* Header */}
         <div className="mb-16">
-          <SignalHeader/>
+          <SignalHeader />
         </div>
+
+        {/* CTA before features */}
+        <section className="text-center mb-12">
+          <h2 className="text-2xl font-bold mb-4">What We Offer</h2>
+          <p className="text-white/70 max-w-xl mx-auto">
+            Discover our daily signals, expert analysis and risk management tips.          </p>
+        </section>
 
         {/* Signal Features */}
         <section className="flex flex-wrap justify-center gap-3 md:gap-4 mb-16">
@@ -87,6 +92,8 @@ const Page = () => {
         {/* Subscription CTA */}
         <section className="text-center">
           <h2 className="text-2xl font-bold mb-6">Ready to Get Started?</h2>
+          <p className="text-white/70 max-w-xl mx-auto mb-6">
+            View Signal Plans      </p>
 
           <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-8">
             {plans.map((plan, i) => (
@@ -112,7 +119,7 @@ const Page = () => {
 
           <Link href="/#plans">
             <span className="inline-block bg-white text-black py-3 px-6 rounded-full hover:bg-gray-300 transition duration-300 cursor-pointer">
-              View Signal Plans
+              Make Payment Now
             </span>
           </Link>
         </section>
