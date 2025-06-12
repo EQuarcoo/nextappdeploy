@@ -12,10 +12,10 @@ const SignalHeader = () => {
   return (
     <header
       className="relative text-white py-16 px-6 md:px-12 xl:px-[8%] rounded-b-3xl mb-20 bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/signalsection.jpg')" }} // Replace with your actual background image path
+      style={{ backgroundImage: "url('/signalsection1.jpg')" }} // Replace with your actual background image path
     >
       {/* Overlay to improve text visibility */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-gray-800 opacity-90 rounded-b-3xl z-0" />
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-gray-800 opacity-80 rounded-b-3xl z-0" />
 
       {/* Foreground Content */}
       <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center">
