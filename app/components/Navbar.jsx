@@ -76,7 +76,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link href="/#glossary" className="font-Ovo">
+            <Link href="/glossary" className="font-Ovo">
               Glossary
             </Link>
           </li>
@@ -142,7 +142,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link href="/#glossary" className="font-Ovo" onClick={closeMenu}>
+              <Link href="/glossary" className="font-Ovo" onClick={closeMenu}>
                 Glossary
               </Link>
             </li>
