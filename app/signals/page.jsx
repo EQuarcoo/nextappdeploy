@@ -1,9 +1,19 @@
 'use client'
 import React from 'react'
-import Link from 'next/link'
 import SignalHeader from '../components/SignalHeader'
 
 const Page = () => {
+  const telegramLink = 'https://t.me/Forexjesus_Assist'
+
+  const handleRedirect = () => {
+    const confirmed = window.confirm(
+      'You’ll be redirected to our Telegram assistant. Continue?'
+    )
+    if (confirmed) {
+      window.open(telegramLink, '_blank')
+    }
+  }
+
   const features = [
     {
       title: 'Daily Trade Alerts',
@@ -31,7 +41,6 @@ const Page = () => {
       duration: '1 Month',
       price: 'USD 20',
       bg: 'bg-gray-200 hover:bg-gray-300 text-black',
-      link: 'https://paystack.com/pay/silverplan',
       icon: '🥈',
     },
     {
@@ -39,7 +48,6 @@ const Page = () => {
       duration: '3 Months',
       price: 'USD 50',
       bg: 'bg-yellow-400 hover:bg-yellow-500 text-black',
-      link: 'https://paystack.com/pay/goldplan',
       icon: '🥇',
     },
     {
@@ -47,7 +55,6 @@ const Page = () => {
       duration: '6 Months',
       price: 'USD 90',
       bg: 'bg-blue-500 hover:bg-blue-600 text-white',
-      link: 'https://paystack.com/pay/diamondplan',
       icon: '💎',
     },
   ]
@@ -69,9 +76,10 @@ const Page = () => {
 
         {/* CTA before features */}
         <section className="text-center mb-12">
-          <h2 className="text-2xl font-bold mb-4">What We Offer</h2>
-          <p className="text-white/70 max-w-xl mx-auto">
-            Discover our daily signals, expert analysis and risk management tips.          </p>
+          <h2 className="text-2xl font-bold mb-4 animate-fade-in">What We Offer</h2>
+          <p className="text-white/70 max-w-xl mx-auto animate-fade-in delay-100">
+            Discover our daily signals, expert analysis and risk management tips.
+          </p>
         </section>
 
         {/* Signal Features */}
@@ -79,7 +87,7 @@ const Page = () => {
           {features.map((feature, i) => (
             <div
               key={i}
-              className={`p-6 w-[230px] rounded-2xl shadow-lg transform transition-all duration-500 hover:scale-105 animate-fade-in ${feature.bg}`}
+              className={`p-6 w-[230px] rounded-2xl shadow-lg transform transition-all duration-500 hover:scale-105 animate-fade-in delay-${i * 100} ${feature.bg}`}
             >
               <h3 className="text-lg font-bold mb-2 flex items-center gap-2">
                 <span>{feature.icon}</span> {feature.title}
@@ -91,39 +99,57 @@ const Page = () => {
 
         {/* Subscription CTA */}
         <section className="text-center">
-          <h2 className="text-2xl font-bold mb-6">Ready to Get Started?</h2>
-          <p className="text-white/70 max-w-xl mx-auto mb-6">
-            View Signal Plans      </p>
+          <h2 className="text-2xl font-bold mb-6 animate-fade-in">Ready to Get Started?</h2>
+          <p className="text-white/70 max-w-xl mx-auto mb-6 animate-fade-in delay-100">
+            View Signal Plans
+          </p>
 
           <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-8">
             {plans.map((plan, i) => (
-              <a
-                href={plan.link}
-                target="_blank"
-                rel="noopener noreferrer"
+              <div
                 key={i}
-                className={`w-[200px] p-5 rounded-xl shadow-md transform transition-all duration-300 hover:scale-105 cursor-pointer ${plan.bg}`}
+                onClick={handleRedirect}
+                className={`w-[200px] p-5 rounded-xl shadow-md transform transition-all duration-300 hover:scale-105 cursor-pointer animate-fade-in delay-${i * 150} ${plan.bg}`}
               >
                 <h3 className="text-lg font-bold mb-1 flex items-center gap-2">
                   <span>{plan.icon}</span> {plan.name}
                 </h3>
                 <p className="text-sm mb-1">{plan.duration}</p>
                 <p className="text-sm font-semibold">{plan.price}</p>
-              </a>
+              </div>
             ))}
           </div>
 
-          <p className="mb-6 text-white/70">
+          <p className="mb-6 text-white/70 animate-fade-in delay-200">
             Subscribe to a package that suits your experience level — from beginner to advanced traders.
           </p>
 
-          <Link href="/#plans">
-            <span className="inline-block bg-white text-black py-3 px-6 rounded-full hover:bg-gray-300 transition duration-300 cursor-pointer">
-              Make Payment Now
-            </span>
-          </Link>
+          <button
+            onClick={handleRedirect}
+            className="inline-block bg-white text-black py-3 px-6 rounded-full hover:bg-gray-300 transition duration-300 animate-fade-in delay-300"
+          >
+            Make Payment Now
+          </button>
         </section>
       </main>
+
+      {/* Animation CSS (optional tailwind animation) */}
+      <style jsx>{`
+        .animate-fade-in {
+          opacity: 0;
+          animation: fadeIn 0.8s ease-out forwards;
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-150 { animation-delay: 0.15s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-0 { animation-delay: 0s; }
+
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
     </div>
   )
 }
