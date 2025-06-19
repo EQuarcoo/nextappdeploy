@@ -1,17 +1,26 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import SignalHeader from '../components/SignalHeader'
 
 const Page = () => {
+  const [showModal, setShowModal] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
   const telegramLink = 'https://t.me/Forexjesus_Assist'
 
-  const handleRedirect = () => {
-    const confirmed = window.confirm(
-      'You’ll be redirected to our Telegram assistant. Continue?'
-    )
-    if (confirmed) {
+  const handlePlanClick = () => {
+    setShowModal(true)
+  }
+
+  const handleConfirmRedirect = () => {
+    setIsLoading(true)
+    // Track user click
+    console.log('User clicked to redirect to Telegram.')
+
+    setTimeout(() => {
       window.open(telegramLink, '_blank')
-    }
+      setIsLoading(false)
+      setShowModal(false)
+    }, 1000) // optional delay to show loader
   }
 
   const features = [
@@ -108,7 +117,7 @@ const Page = () => {
             {plans.map((plan, i) => (
               <div
                 key={i}
-                onClick={handleRedirect}
+                onClick={handlePlanClick}
                 className={`w-[200px] p-5 rounded-xl shadow-md transform transition-all duration-300 hover:scale-105 cursor-pointer animate-fade-in delay-${i * 150} ${plan.bg}`}
               >
                 <h3 className="text-lg font-bold mb-1 flex items-center gap-2">
@@ -125,7 +134,7 @@ const Page = () => {
           </p>
 
           <button
-            onClick={handleRedirect}
+            onClick={handlePlanClick}
             className="inline-block bg-white text-black py-3 px-6 rounded-full hover:bg-gray-300 transition duration-300 animate-fade-in delay-300"
           >
             Make Payment Now
@@ -133,7 +142,37 @@ const Page = () => {
         </section>
       </main>
 
-      {/* Animation CSS (optional tailwind animation) */}
+      {/* Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white text-black p-6 rounded-lg w-80 text-center space-y-4">
+            <h3 className="text-lg font-bold">Continue to Telegram?</h3>
+            <p>You’ll be redirected to our assistant. Do you want to proceed?</p>
+            {isLoading ? (
+              <div className="flex justify-center py-2">
+                <div className="loader border-4 border-gray-300 border-t-blue-500 rounded-full w-8 h-8 animate-spin"></div>
+              </div>
+            ) : (
+              <div className="flex justify-center gap-4">
+                <button
+                  onClick={() => setShowModal(false)}
+                  className="px-4 py-2 rounded bg-gray-300 hover:bg-gray-400"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={handleConfirmRedirect}
+                  className="px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700"
+                >
+                  Continue
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* Tailwind keyframes for fade-in */}
       <style jsx>{`
         .animate-fade-in {
           opacity: 0;
@@ -148,6 +187,10 @@ const Page = () => {
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(20px); }
           to { opacity: 1; transform: translateY(0); }
+        }
+
+        .loader {
+          border-top-color: #3b82f6;
         }
       `}</style>
     </div>
