@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { FaCheckCircle, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { FaCheckCircle, FaChevronDown, FaChevronUp, FaTimes } from 'react-icons/fa';
 
 const packages = [
   {
@@ -11,6 +11,7 @@ const packages = [
       'Access to community chat',
       'Monthly webinars',
     ],
+    link: 'https://t.me/+sVvsE_OoWj5iYjQ8',
   },
   {
     name: 'Intermediate',
@@ -20,6 +21,7 @@ const packages = [
       'Weekly live Q&A',
       'Exclusive resources access',
     ],
+    link: 'https://t.me/+91EPn5ybb21lMzlk',
   },
   {
     name: 'Advanced',
@@ -29,6 +31,7 @@ const packages = [
       'Daily signals & trade alerts',
       'Priority support',
     ],
+    link: 'https://t.me/+-zTxx7AzMfc0OWRk',
   },
 ];
 
@@ -50,27 +53,27 @@ const faqs = [
 const Pricing = () => {
   const [testimonials, setTestimonials] = useState([]);
   const [openFaq, setOpenFaq] = useState(null);
+  const [activePackage, setActivePackage] = useState(null);
 
   useEffect(() => {
     const fetchedTestimonials = [
       {
-        quote:
-          'The beginner course helped me start trading with confidence. Highly recommend!',
+        quote: 'The beginner course helped me start trading with confidence. Highly recommend!',
         name: 'Akosua B.',
       },
       {
-        quote:
-          'Live Q&As and coaching made all the difference for me. This is gold.',
+        quote: 'Live Q&As and coaching made all the difference for me. This is gold.',
         name: 'Kwaku T.',
       },
       {
-        quote:
-          'I love the community and the premium support. Worth every pesewa.',
+        quote: 'I love the community and the premium support. Worth every pesewa.',
         name: 'Nana A.',
       },
     ];
     setTestimonials(fetchedTestimonials);
   }, []);
+
+  const closeModal = () => setActivePackage(null);
 
   return (
     <section
@@ -109,18 +112,17 @@ const Pricing = () => {
                 ))}
               </ul>
               <p className="text-lg font-semibold mb-6">Price: {pkg.price}</p>
-              <a
-                href="https://t.me/Forexjesus_Assist"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => setActivePackage(pkg)}
                 className="block text-center bg-black text-yellow-400 py-2 rounded font-bold hover:bg-gray-900 w-full transition"
               >
                 Get Started
-              </a>
+              </button>
             </div>
           ))}
         </div>
 
+        {/* Testimonials */}
         {testimonials.length > 0 && (
           <div className="mt-20 text-center">
             <h3 className="text-2xl text-yellow-300 font-semibold mb-6">What Our Students Say</h3>
@@ -136,14 +138,17 @@ const Pricing = () => {
           </div>
         )}
 
-        {/* Accordion FAQ */}
+        {/* FAQs */}
         <div className="mt-20 max-w-4xl mx-auto text-yellow-200">
           <h3 className="text-2xl text-yellow-300 font-semibold mb-6 text-center">
             Frequently Asked Questions
           </h3>
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-black bg-opacity-30 p-4 rounded transition duration-300">
+              <div
+                key={index}
+                className="bg-black bg-opacity-30 p-4 rounded transition duration-300"
+              >
                 <button
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
                   className="w-full flex justify-between items-center font-bold text-yellow-300 focus:outline-none"
@@ -167,6 +172,36 @@ const Pricing = () => {
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+      {activePackage && (
+        <div className="fixed inset-0 z-50 bg-black/30 backdrop-blur-sm flex items-center justify-center px-4 animate-fade">
+          <div className="bg-white rounded-xl p-6 max-w-md w-full text-black relative shadow-2xl animate-slide">
+            <button
+              onClick={closeModal}
+              className="absolute top-3 right-4 text-2xl text-gray-500 hover:text-gray-700 transition"
+              aria-label="Close"
+            >
+              <FaTimes />
+            </button>
+            <h3 className="text-2xl font-bold mb-4 text-center">{activePackage.name} Plan</h3>
+            <p className="text-center mb-2 font-semibold">Price: {activePackage.price}</p>
+            <ul className="mb-6 list-disc list-inside space-y-2">
+              {activePackage.features.map((feat, i) => (
+                <li key={i}>{feat}</li>
+              ))}
+            </ul>
+            <a
+              href={activePackage.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full bg-yellow-500 hover:bg-yellow-600 text-center text-black font-bold py-2 rounded"
+            >
+              Continue on Telegram
+            </a>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
