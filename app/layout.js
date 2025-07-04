@@ -2,7 +2,7 @@ import { Outfit, Ovo } from "next/font/google";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import "./globals.css";
-import Head from "next/head"; // ✅ Import Head for adding scripts to <head>
+import Script from "next/script"; // ✅ Correct way to load external scripts
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -22,13 +22,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <Head>
-        {/* ✅ Flutterwave Payment Script */}
-        <script src="https://checkout.flutterwave.com/v3.js" />
-      </Head>
+      <head />
       <body
         className={`${outfit.className} ${ovo.className} antialiased leading-5 overflow-x-hidden`}
       >
+        {/* ✅ Flutterwave script loaded safely without blocking render */}
+        <Script
+          src="https://checkout.flutterwave.com/v3.js"
+          strategy="afterInteractive"
+        />
+
         <Navbar />
         {children}
         <Footer />
