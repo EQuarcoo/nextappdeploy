@@ -7,9 +7,9 @@ import { assets } from "@/assets/assets"
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white px-6 md:px-12 xl:px-[8%] pt-12 pb-6 font-Ovo">
+      <footer className="bg-black text-white px-6 md:px-12 xl:px-[8%] pt-12 pb-6 font-Ovo">
       <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-10 md:gap-20">
-        
+
         {/* Logo and Brand Info */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left">
           <Image
@@ -31,6 +31,7 @@ const Footer = () => {
           <Link href="/#lotcal" className="hover:underline">Lot Size Calculator</Link>
           <Link href="/#glossary" className="hover:underline">Glossary</Link>
           <Link href="/signals" className="hover:underline">Signals</Link>
+          <Link href="/disclaimer" className="hover:underline">Disclaimer & Refund</Link>
         </div>
 
         {/* Contact & Socials */}
@@ -68,9 +69,12 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom strip */}
-      <div className="mt-10 border-t border-gray-600 pt-4 text-center text-sm text-gray-400">
-        &copy; {new Date().getFullYear()} forexJesus. All rights reserved.
+      {/* Footer Bottom Strip */}
+      <div className="mt-8 border-t border-gray-600 pt-4 text-center text-sm text-gray-400">
+        &copy; {new Date().getFullYear()} forexJesus. All rights reserved. | {" "}
+        <Link href="/disclaimer" className="underline hover:text-white">
+          Disclaimer & Refund Policy
+        </Link>
       </div>
     </footer>
   )

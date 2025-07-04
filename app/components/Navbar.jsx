@@ -27,9 +27,10 @@ const Navbar = () => {
 
   return (
     <>
+      <div className="h-20" /> {/* Spacer for fixed navbar */}
       <nav
-        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 ${
-          isScroll ? 'bg-white bg-opacity-50 backdrop-blur-lg shadow-sm' : ''
+        className={`w-full fixed top-0 left-0 h-20 px-5 lg:px-8 xl:px-[8%] flex items-center justify-between z-50 transition-all duration-300 ${
+          isScroll ? 'bg-white bg-opacity-50 backdrop-blur-lg shadow-sm' : 'bg-transparent'
         }`}
       >
         {/* Logo */}
@@ -143,3 +144,4 @@ const Navbar = () => {
 }
 
 export default Navbar
+
